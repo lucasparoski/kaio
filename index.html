@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Kafka 🐾</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #c97a3a, #f2a65a);
+      overflow-x: hidden;
+    }
+
+    /* CONTEÚDO */
+    .conteudo {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card {
+      background-color: #fffaf4;
+      padding: 22px;
+      max-width: 420px;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+      max-width: 260px;
+      border-radius: 14px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #8b4513;
+    }
+
+    .info {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .whatsapp {
+      margin-top: 25px;
+    }
+
+    .whatsapp a {
+      display: block;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 14px;
+      border-radius: 12px;
+    }
+
+    .telefone {
+      margin-top: 12px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .telefone a {
+      color: #8b4513;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .tutor {
+      margin-top: 6px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .aviso {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* ===== EMOJIS FLUTUANTES (AGORA NA FRENTE DE TUDO) ===== */
+    .emoji-flutuante {
+      position: fixed;
+      bottom: -40px;
+      pointer-events: none;
+      animation: subirEmoji linear forwards;
+      z-index: 99999;
+      opacity: 0.9;
+    }
+
+    @keyframes subirEmoji {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- CONTEÚDO DO SITE -->
+  <div class="conteudo">
+    <div class="card">
+      <h1>🐾 Olá, eu sou o Kafka!</h1>
+
+      <img src="https://i.imgur.com/TULHyCN.jpeg" alt="Foto do gato Kafka">
+
+      <div class="info">
+        <p><strong>Nome:</strong> Kafka</p>
+        <p><strong>Cor:</strong> Laranja 🧡</p>
+      </div>
+
+      <div class="whatsapp">
+        <a href="https://wa.me/5542984219050?text=Oi!%20Encontrei%20o%20Kafka%20e%20escaneei%20o%20QR%20Code."
+           target="_blank">
+          📲 Enviar mensagem no WhatsApp
+        </a>
+      </div>
+
+      <div class="telefone">
+        📞 Ou ligue: <a href="tel:+5542984219050">(42) 98421-9050</a>
+      </div>
+
+      <div class="tutor">
+        Tutor: <strong>Lucas Paroski</strong>
+      </div>
+
+      <p class="aviso">
+        Se você me encontrou, por favor entre em contato 🙏
+      </p>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT DOS EMOJIS -->
+  <script>
+    const emojis = ["🐾", "🐱", "🧡"];
+
+    function criarEmoji() {
+      const emoji = document.createElement("div");
+      emoji.className = "emoji-flutuante";
+      emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+
+      emoji.style.left = Math.random() * 100 + "vw";
+
+      const duracao = Math.random() * 3 + 4;
+      emoji.style.animationDuration = duracao + "s";
+      emoji.style.fontSize = (22 + Math.random() * 14) + "px";
+
+      document.body.appendChild(emoji);
+
+      setTimeout(() => emoji.remove(), duracao * 1000);
+    }
+
+    setInterval(criarEmoji, 900);
+  </script>
+
+</body>
+</html>

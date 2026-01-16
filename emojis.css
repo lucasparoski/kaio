@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #c97a3a, #f2a65a);
+  overflow-x: hidden;
+}
+
+/* força todo conteúdo normal abaixo */
+body * {
+  position: relative;
+  z-index: 1;
+}
+
+img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 14px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  margin-top: 0;
+  color: #8b4513;
+}
+
+.info {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #333;
+}
+
+.whatsapp {
+  margin-top: 25px;
+}
+
+.whatsapp a {
+  display: block;
+  background-color: #25D366;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px;
+  border-radius: 12px;
+}
+
+.telefone {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #444;
+}
+
+.telefone a {
+  color: #8b4513;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.tutor {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+.aviso {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* ===== EMOJIS FLUTUANTES ===== */
+.emoji-flutuante {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  animation: subirEmoji linear forwards;
+  z-index: 9999;
+  opacity: 0.9;
+}
+
+@keyframes subirEmoji {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}
